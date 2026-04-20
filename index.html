@@ -17,90 +17,91 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: linear-gradient(135deg, #0c4a6e, #0284c7, #06b6d4);
             min-height: 100vh; color: var(--text-primary);
-            padding: 4px; overflow: hidden; height: 100vh;
+            padding: 12px; overflow: hidden; height: 100vh;
             display: flex; flex-direction: column;
         }
         .container {
-            max-width: 900px; margin: 0 auto; height: 100%;
+            max-width: 1200px; margin: 0 auto; height: 100%; width: 100%;
             display: flex; flex-direction: column; overflow: hidden;
         }
-        main { flex: 1; overflow-y: auto; padding: 4px; }
-        header { text-align: center; color: white; padding: 4px 0; }
-        header h1 { font-size: 1.3rem; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
-        .subtitle { font-size: 0.75rem; opacity: 0.9; }
+        main { flex: 1; overflow-y: auto; padding: 8px; }
+        header { text-align: center; color: white; padding: 8px 0; }
+        header h1 { font-size: 1.8rem; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .subtitle { font-size: 1rem; opacity: 0.9; }
+        .grid-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; }
         .card {
-            background: var(--card-bg); border-radius: 8px;
-            padding: 10px; margin-bottom: 6px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: var(--card-bg); border-radius: 10px;
+            padding: 14px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         .card h2 {
-            font-size: 0.85rem; font-weight: 600; color: var(--text-primary);
-            margin-bottom: 6px; padding-bottom: 4px; border-bottom: 1px solid var(--border-color);
+            font-size: 1rem; font-weight: 600; color: var(--text-primary);
+            margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border-color);
         }
-        .status-info { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
-        .status-item { display: flex; flex-direction: column; gap: 1px; }
-        .status-item .label { font-size: 0.65rem; color: var(--text-secondary); }
-        .status-item .value { font-size: 0.8rem; font-weight: 600; word-break: break-all; }
-        .ping-results { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+        .status-info { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+        .status-item { display: flex; flex-direction: column; gap: 2px; }
+        .status-item .label { font-size: 0.75rem; color: var(--text-secondary); font-weight: 500; }
+        .status-item .value { font-size: 0.95rem; font-weight: 600; word-break: break-all; }
+        .ping-results { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
         .ping-item {
-            background: var(--bg-color); border-radius: 4px;
-            padding: 6px; display: flex; flex-direction: column; gap: 1px;
+            background: var(--bg-color); border-radius: 6px;
+            padding: 10px; display: flex; flex-direction: column; gap: 2px;
         }
-        .ping-item .website { font-size: 0.7rem; font-weight: 500; }
-        .ping-item .ping-value { font-size: 0.85rem; font-weight: 600; }
+        .ping-item .website { font-size: 0.8rem; font-weight: 500; }
+        .ping-item .ping-value { font-size: 1rem; font-weight: 600; }
         .ping-value.good { color: var(--success-color); }
         .ping-value.fair { color: var(--warning-color); }
         .ping-value.poor { color: var(--danger-color); }
         .avg-ping {
-            display: flex; justify-content: center; gap: 4px;
-            padding: 4px; background: var(--bg-color); border-radius: 4px; margin-top: 4px;
+            display: flex; justify-content: center; gap: 6px;
+            padding: 6px; background: var(--bg-color); border-radius: 6px; margin-top: 6px;
         }
-        .avg-ping .label { font-size: 0.7rem; color: var(--text-secondary); }
-        .avg-ping .value { font-size: 0.85rem; font-weight: 700; color: var(--primary-color); }
-        .speed-results { display: flex; flex-direction: column; gap: 6px; }
+        .avg-ping .label { font-size: 0.85rem; color: var(--text-secondary); font-weight: 500; }
+        .avg-ping .value { font-size: 1.1rem; font-weight: 700; color: var(--primary-color); }
+        .speed-results { display: flex; flex-direction: column; gap: 8px; }
         .speed-item {
-            display: flex; align-items: center; gap: 6px;
-            padding: 8px; background: var(--bg-color); border-radius: 6px;
+            display: flex; align-items: center; gap: 10px;
+            padding: 12px; background: var(--bg-color); border-radius: 8px;
         }
-        .speed-icon { font-size: 1.2rem; font-weight: 700; color: var(--primary-color); min-width: 24px; text-align: center; }
-        .speed-info { display: flex; flex-direction: column; min-width: 80px; }
-        .speed-label { font-size: 0.6rem; color: var(--text-secondary); }
-        .speed-value { font-size: 1rem; font-weight: 700; }
-        .speed-unit { font-size: 0.6rem; color: var(--text-secondary); }
-        .speed-bar { flex: 1; height: 6px; background: var(--border-color); border-radius: 3px; overflow: hidden; }
-        .speed-progress { height: 100%; border-radius: 3px; transition: width 0.3s ease; width: 0%; }
+        .speed-icon { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); min-width: 36px; text-align: center; }
+        .speed-info { display: flex; flex-direction: column; min-width: 100px; }
+        .speed-label { font-size: 0.75rem; color: var(--text-secondary); font-weight: 500; }
+        .speed-value { font-size: 1.4rem; font-weight: 700; }
+        .speed-unit { font-size: 0.75rem; color: var(--text-secondary); }
+        .speed-bar { flex: 1; height: 8px; background: var(--border-color); border-radius: 4px; overflow: hidden; }
+        .speed-progress { height: 100%; border-radius: 4px; transition: width 0.3s ease; width: 0%; }
         .download .speed-progress { background: linear-gradient(90deg, var(--primary-color), #3b82f6); }
         .upload .speed-progress { background: linear-gradient(90deg, var(--success-color), #34d399); }
-        .assessment-result { display: flex; align-items: center; gap: 8px; padding: 8px; background: var(--bg-color); border-radius: 6px; }
+        .assessment-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+        .assessment-result { display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-color); border-radius: 8px; }
         .grade {
-            width: 40px; height: 40px; display: flex; align-items: center;
-            justify-content: center; font-size: 1.3rem; font-weight: 800;
+            width: 56px; height: 56px; display: flex; align-items: center;
+            justify-content: center; font-size: 1.8rem; font-weight: 800;
             border-radius: 50%; background: var(--border-color); color: var(--text-secondary); flex-shrink: 0;
         }
         .grade.excellent { background: linear-gradient(135deg, #10b981, #059669); color: white; }
         .grade.good { background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; }
         .grade.fair { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; }
         .grade.poor { background: linear-gradient(135deg, #ef4444, #dc2626); color: white; }
-        .assessment-text { font-size: 0.75rem; font-weight: 500; line-height: 1.3; }
-        .recommendations { padding-top: 6px; border-top: 1px solid var(--border-color); margin-top: 6px; }
-        .recommendations h3 { font-size: 0.7rem; font-weight: 600; margin-bottom: 4px; }
-        .recommendations ul { list-style: none; display: flex; flex-direction: column; gap: 3px; }
+        .assessment-text { font-size: 0.9rem; font-weight: 500; line-height: 1.4; }
+        .recommendations { padding: 12px; background: var(--bg-color); border-radius: 8px; }
+        .recommendations h3 { font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+        .recommendations ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
         .recommendations li {
-            padding: 3px 6px; background: var(--bg-color); border-radius: 3px;
-            font-size: 0.65rem; color: var(--text-secondary); border-left: 2px solid var(--primary-color);
+            padding: 6px 10px; background: var(--card-bg); border-radius: 4px;
+            font-size: 0.8rem; color: var(--text-secondary); border-left: 3px solid var(--primary-color);
         }
-        .actions { display: flex; gap: 6px; justify-content: center; margin: 6px 0; flex-wrap: wrap; }
+        .actions { display: flex; gap: 10px; justify-content: center; margin: 10px 0; }
         .btn {
-            padding: 6px 16px; border: none; border-radius: 4px;
-            font-size: 0.8rem; font-weight: 600; cursor: pointer;
-            transition: all 0.2s ease; min-height: 32px;
+            padding: 10px 28px; border: none; border-radius: 6px;
+            font-size: 1rem; font-weight: 600; cursor: pointer;
+            transition: all 0.2s ease; min-height: 44px;
         }
         .btn-primary {
             background: linear-gradient(135deg, var(--primary-color), #3b82f6);
-            color: white; box-shadow: 0 2px 6px rgba(37,99,235,0.3);
+            color: white; box-shadow: 0 4px 12px rgba(37,99,235,0.3);
         }
-        .btn-primary:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,0.4); }
-        .btn-secondary { background: white; color: var(--text-primary); border: 1px solid var(--border-color); }
+        .btn-primary:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(37,99,235,0.4); }
+        .btn-secondary { background: white; color: var(--text-primary); border: 2px solid var(--border-color); }
         .btn-secondary:hover:not(:disabled) { background: var(--bg-color); border-color: var(--primary-color); color: var(--primary-color); }
         .btn:disabled { opacity: 0.6; cursor: not-allowed; }
         .progress-overlay {
@@ -110,20 +111,26 @@
         }
         .progress-overlay.active { display: flex; }
         .progress-content {
-            background: white; padding: 20px 30px; border-radius: 10px;
-            text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            background: white; padding: 30px 50px; border-radius: 12px;
+            text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         .spinner {
-            width: 30px; height: 30px; border: 3px solid var(--border-color);
+            width: 40px; height: 40px; border: 4px solid var(--border-color);
             border-top-color: var(--primary-color); border-radius: 50%;
-            animation: spin 1s linear infinite; margin: 0 auto 10px;
+            animation: spin 1s linear infinite; margin: 0 auto 16px;
         }
         @keyframes spin { to { transform: rotate(360deg); } }
-        #progressText { font-size: 0.9rem; font-weight: 500; color: var(--text-primary); }
-        footer { text-align: center; color: rgba(255,255,255,0.8); padding: 4px; font-size: 0.7rem; }
-        @media (max-width: 768px) {
+        #progressText { font-size: 1.1rem; font-weight: 500; color: var(--text-primary); }
+        footer { text-align: center; color: rgba(255,255,255,0.8); padding: 8px; font-size: 0.85rem; }
+        @media (max-width: 900px) {
+            .grid-row { grid-template-columns: 1fr; }
+            .assessment-row { grid-template-columns: 1fr; }
             .status-info { grid-template-columns: repeat(2, 1fr); }
             .ping-results { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .status-info { grid-template-columns: 1fr; }
+            .ping-results { grid-template-columns: 1fr; }
             .speed-item { flex-wrap: wrap; }
             .speed-bar { width: 100%; }
             .assessment-result { flex-direction: column; text-align: center; }
@@ -139,89 +146,95 @@
             <p class="subtitle">Test your network connection quality and speed</p>
         </header>
         <main>
-            <section class="card status-card">
-                <h2>Connection Status</h2>
-                <div class="status-info">
-                    <div class="status-item">
-                        <span class="label">WiFi Status:</span>
-                        <span id="wifiStatus" class="value">--</span>
-                    </div>
-                    <div class="status-item">
-                        <span class="label">Network Type:</span>
-                        <span id="networkType" class="value">--</span>
-                    </div>
-                    <div class="status-item">
-                        <span class="label">Signal Strength:</span>
-                        <span id="signalStrength" class="value">--</span>
-                    </div>
-                    <div class="status-item">
-                        <span class="label">IP Address:</span>
-                        <span id="ipAddress" class="value">--</span>
-                    </div>
-                </div>
-            </section>
-            <section class="card ping-card">
-                <h2>Ping Test</h2>
-                <div class="ping-results" id="pingResults">
-                    <div class="ping-item">
-                        <span class="website">google.com</span>
-                        <span class="ping-value" id="ping-google">--</span>
-                    </div>
-                    <div class="ping-item">
-                        <span class="website">amazon.com</span>
-                        <span class="ping-value" id="ping-amazon">--</span>
-                    </div>
-                    <div class="ping-item">
-                        <span class="website">cloudflare.com</span>
-                        <span class="ping-value" id="ping-cloudflare">--</span>
-                    </div>
-                    <div class="ping-item">
-                        <span class="website">github.com</span>
-                        <span class="ping-value" id="ping-github">--</span>
-                    </div>
-                </div>
-                <div class="avg-ping">
-                    <span class="label">Average Ping:</span>
-                    <span id="avgPing" class="value">-- ms</span>
-                </div>
-            </section>
-            <section class="card speed-card">
-                <h2>Speed Test</h2>
-                <div class="speed-results">
-                    <div class="speed-item download">
-                        <div class="speed-icon">↓</div>
-                        <div class="speed-info">
-                            <span class="speed-label">Download</span>
-                            <span class="speed-value" id="downloadSpeed">--</span>
-                            <span class="speed-unit">Mbps</span>
+            <div class="grid-row">
+                <div class="card status-card">
+                    <h2>Connection Status</h2>
+                    <div class="status-info">
+                        <div class="status-item">
+                            <span class="label">WiFi Status:</span>
+                            <span id="wifiStatus" class="value">--</span>
                         </div>
-                        <div class="speed-bar"><div class="speed-progress" id="downloadBar"></div></div>
-                    </div>
-                    <div class="speed-item upload">
-                        <div class="speed-icon">↑</div>
-                        <div class="speed-info">
-                            <span class="speed-label">Upload</span>
-                            <span class="speed-value" id="uploadSpeed">--</span>
-                            <span class="speed-unit">Mbps</span>
+                        <div class="status-item">
+                            <span class="label">Network Type:</span>
+                            <span id="networkType" class="value">--</span>
                         </div>
-                        <div class="speed-bar"><div class="speed-progress" id="uploadBar"></div></div>
+                        <div class="status-item">
+                            <span class="label">Signal Strength:</span>
+                            <span id="signalStrength" class="value">--</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="label">IP Address:</span>
+                            <span id="ipAddress" class="value">--</span>
+                        </div>
                     </div>
                 </div>
-            </section>
-            <section class="card assessment-card">
-                <h2>Network Assessment</h2>
-                <div class="assessment-result" id="assessmentResult">
-                    <div class="grade" id="networkGrade">--</div>
-                    <div class="assessment-text" id="assessmentText">Press the button to start</div>
+                <div class="card ping-card">
+                    <h2>Ping Test</h2>
+                    <div class="ping-results">
+                        <div class="ping-item">
+                            <span class="website">google.com</span>
+                            <span class="ping-value" id="ping-google">--</span>
+                        </div>
+                        <div class="ping-item">
+                            <span class="website">amazon.com</span>
+                            <span class="ping-value" id="ping-amazon">--</span>
+                        </div>
+                        <div class="ping-item">
+                            <span class="website">cloudflare.com</span>
+                            <span class="ping-value" id="ping-cloudflare">--</span>
+                        </div>
+                        <div class="ping-item">
+                            <span class="website">github.com</span>
+                            <span class="ping-value" id="ping-github">--</span>
+                        </div>
+                    </div>
+                    <div class="avg-ping">
+                        <span class="label">Average Ping:</span>
+                        <span id="avgPing" class="value">-- ms</span>
+                    </div>
                 </div>
-                <div class="recommendations" id="recommendations">
-                    <h3>Recommendations:</h3>
-                    <ul id="recommendationList"></ul>
+                <div class="card speed-card">
+                    <h2>Speed Test</h2>
+                    <div class="speed-results">
+                        <div class="speed-item download">
+                            <div class="speed-icon">↓</div>
+                            <div class="speed-info">
+                                <span class="speed-label">Download</span>
+                                <span class="speed-value" id="downloadSpeed">--</span>
+                                <span class="speed-unit">Mbps</span>
+                            </div>
+                            <div class="speed-bar"><div class="speed-progress" id="downloadBar"></div></div>
+                        </div>
+                        <div class="speed-item upload">
+                            <div class="speed-icon">↑</div>
+                            <div class="speed-info">
+                                <span class="speed-label">Upload</span>
+                                <span class="speed-value" id="uploadSpeed">--</span>
+                                <span class="speed-unit">Mbps</span>
+                            </div>
+                            <div class="speed-bar"><div class="speed-progress" id="uploadBar"></div></div>
+                        </div>
+                    </div>
                 </div>
-            </section>
+            </div>
+            <div class="assessment-row">
+                <div class="card assessment-card">
+                    <h2>Network Assessment</h2>
+                    <div class="assessment-result" id="assessmentResult">
+                        <div class="grade" id="networkGrade">--</div>
+                        <div class="assessment-text" id="assessmentText">Press the button to start diagnostics</div>
+                    </div>
+                </div>
+                <div class="card recommendations-card">
+                    <h2>Recommendations</h2>
+                    <div class="recommendations" id="recommendations">
+                        <ul id="recommendationList"></ul>
+                    </div>
+                </div>
+            </div>
             <div class="actions">
-                <button id="runTestBtn" class="btn btn-primary">Run Diagnostic</button>
-                <button id="exportBtn" class="btn btn-secondary">Export</button>
+                <button id="runTestBtn" class="btn btn-primary">Run Full Diagnostic</button>
+                <button id="exportBtn" class="btn btn-secondary">Export Results</button>
             </div>
             <div class="progress-overlay" id="progressOverlay">
                 <div class="progress-content">
@@ -281,12 +294,11 @@
                     clearTimeout(tid);
                     const pt = performance.now() - start;
                     pingResults[website] = pt; pingTimes.push(pt);
-                    element.textContent = formatPing(pt); element.className = 'ping-value ' + getPingClass(pt);
+                    if (element) { element.textContent = formatPing(pt); element.className = 'ping-value ' + getPingClass(pt); }
                 } catch(e) {
                     const ep = estimatePing(website); pingResults[website] = ep;
                     if (ep !== 'N/A') pingTimes.push(ep);
-                    element.textContent = ep === 'N/A' ? 'Timeout' : formatPing(ep);
-                    element.className = 'ping-value ' + getPingClass(ep);
+                    if (element) { element.textContent = ep === 'N/A' ? 'Timeout' : formatPing(ep); element.className = 'ping-value ' + getPingClass(ep); }
                 }
                 await sleep(100);
             }
