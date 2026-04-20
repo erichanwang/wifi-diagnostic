@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi Diagnostic Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>WiFi Diagnostic Tool</h1>
+            <p class="subtitle">Test your network connection quality and speed</p>
+        </header>
+
+        <main>
+            <!-- Connection Status -->
+            <section class="card status-card">
+                <h2>Connection Status</h2>
+                <div class="status-info">
+                    <div class="status-item">
+                        <span class="label">WiFi Status:</span>
+                        <span id="wifiStatus" class="value">Checking...</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">Network Name (SSID):</span>
+                        <span id="ssidName" class="value">--</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">Signal Strength:</span>
+                        <span id="signalStrength" class="value">--</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">IP Address:</span>
+                        <span id="ipAddress" class="value">--</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ping Test -->
+            <section class="card ping-card">
+                <h2>Ping Test</h2>
+                <p class="description">Testing latency to common websites...</p>
+                <div class="ping-results" id="pingResults">
+                    <div class="ping-item">
+                        <span class="website">google.com</span>
+                        <span class="ping-value" id="ping-google">Testing...</span>
+                    </div>
+                    <div class="ping-item">
+                        <span class="website">amazon.com</span>
+                        <span class="ping-value" id="ping-amazon">Testing...</span>
+                    </div>
+                    <div class="ping-item">
+                        <span class="website">cloudflare.com</span>
+                        <span class="ping-value" id="ping-cloudflare">Testing...</span>
+                    </div>
+                    <div class="ping-item">
+                        <span class="website">github.com</span>
+                        <span class="ping-value" id="ping-github">Testing...</span>
+                    </div>
+                </div>
+                <div class="avg-ping">
+                    <span class="label">Average Ping:</span>
+                    <span id="avgPing" class="value">-- ms</span>
+                </div>
+            </section>
+
+            <!-- Speed Test -->
+            <section class="card speed-card">
+                <h2>Speed Test</h2>
+                <div class="speed-results">
+                    <div class="speed-item download">
+                        <div class="speed-icon">↓</div>
+                        <div class="speed-info">
+                            <span class="speed-label">Download Speed</span>
+                            <span class="speed-value" id="downloadSpeed">Testing...</span>
+                            <span class="speed-unit">Mbps</span>
+                        </div>
+                        <div class="speed-bar">
+                            <div class="speed-progress" id="downloadBar"></div>
+                        </div>
+                    </div>
+                    <div class="speed-item upload">
+                        <div class="speed-icon">↑</div>
+                        <div class="speed-info">
+                            <span class="speed-label">Upload Speed</span>
+                            <span class="speed-value" id="uploadSpeed">Testing...</span>
+                            <span class="speed-unit">Mbps</span>
+                        </div>
+                        <div class="speed-bar">
+                            <div class="speed-progress" id="uploadBar"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Overall Assessment -->
+            <section class="card assessment-card">
+                <h2>Overall Network Assessment</h2>
+                <div class="assessment-result" id="assessmentResult">
+                    <div class="grade" id="networkGrade">--</div>
+                    <div class="assessment-text" id="assessmentText">Running diagnostics...</div>
+                </div>
+                <div class="recommendations" id="recommendations">
+                    <h3>Recommendations:</h3>
+                    <ul id="recommendationList"></ul>
+                </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <div class="actions">
+                <button id="runTestBtn" class="btn btn-primary">Run Full Diagnostic</button>
+                <button id="exportBtn" class="btn btn-secondary">Export Results</button>
+            </div>
+
+            <!-- Progress Indicator -->
+            <div class="progress-overlay" id="progressOverlay">
+                <div class="progress-content">
+                    <div class="spinner"></div>
+                    <p id="progressText">Running diagnostics...</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>WiFi Diagnostic Tool &copy; 2026 | Built with HTML, CSS & JavaScript</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
